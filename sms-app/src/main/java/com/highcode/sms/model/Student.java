@@ -1,5 +1,6 @@
 package com.highcode.sms.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,11 +21,14 @@ public class Student {
 	private String phoneNo;
 	private Byte[] photo;
 	
+	@ManyToOne(cascade=CascadeType.REFRESH)
+	private Guardian guardian;
+	
 	@ManyToOne
 	private Branch branch;
 
 	public Student(int id, String firstName, String middleName, String lastName, String address, String email,
-			String phoneNo, Byte[] photo, Branch branch) {
+			String phoneNo, Byte[] photo, Branch branch ,Guardian guardian) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -35,6 +39,15 @@ public class Student {
 		this.phoneNo = phoneNo;
 		this.photo = photo;
 		this.branch = branch;
+		this.guardian = guardian;
+	}
+
+	public Guardian getGuardian() {
+		return guardian;
+	}
+
+	public void setGuardian(Guardian guardian) {
+		this.guardian = guardian;
 	}
 
 	public int getId() {

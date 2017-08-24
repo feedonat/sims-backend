@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class AccedemicYear {
+public class AccademicYear {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

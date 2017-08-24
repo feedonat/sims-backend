@@ -15,7 +15,7 @@ public class Registration {
 	@OneToOne
 	private Student student;
 	@OneToOne
-	private AccedemicYear accYear;
+	private AccademicYear accYear;
 	@OneToOne
 	private Section section;
 	private String status;
