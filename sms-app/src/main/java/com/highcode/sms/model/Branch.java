@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,22 +24,11 @@ public class Branch {
 	@OneToMany(mappedBy = "branch")
 	private List<Student> students;
 	
+	 @OneToMany(mappedBy="branch",fetch=FetchType.LAZY)
+	 private List<ProfileAttachements> attachements;
+	 
 	 @ManyToOne(cascade= CascadeType.ALL)
 	private School school;
 
-	public Branch(int id, String branchName, String branchAddress, String branchPhone, String branchEmail,
-			List<Student> students, School school) {
-		super();
-		this.id = id;
-		this.branchName = branchName;
-		this.branchAddress = branchAddress;
-		this.branchPhone = branchPhone;
-		this.branchEmail = branchEmail;
-		this.students = students;
-		this.school = school;
-	}
-    
-	
-    
-	
+
 }

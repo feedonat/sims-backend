@@ -16,8 +16,8 @@ public class ISchoolServiceImpl implements ISchoolService {
 	private ISchoolRepository schoolrepo;
 	
 	@Override
-	public void save(School school) {
-		schoolrepo.save(school);
+	public School save(School school) {
+		return schoolrepo.save(school);
 	}
 
 	@Override
@@ -30,20 +30,20 @@ public class ISchoolServiceImpl implements ISchoolService {
 		return schoolrepo.findAll();
 	}
 	@Override
-	public void updateSchool(School school) {
+	public School updateSchool(School school) {
 	
 		School schooltoupdate = getSchoolById(school.getSchoolId());
 		schooltoupdate.setAddress(school.getAddress());
 		schooltoupdate.setEmail(school.getEmail());
-		schooltoupdate.setLogo(school.getLogo());
+
 		schooltoupdate.setPhone(school.getPhone());
 		schooltoupdate.setSchoolName(school.getSchoolName());
-		schoolrepo.save(schooltoupdate);
+		return schoolrepo.save(schooltoupdate);
 	}
 	@Override
 	public void removeSchool(int schoolId) {
 		School schoolToDelete = getSchoolById(schoolId);
-		schoolrepo.delete(schoolToDelete);
+        schoolrepo.delete(schoolToDelete);
 		
 	}
 

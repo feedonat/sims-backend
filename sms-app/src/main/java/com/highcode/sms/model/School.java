@@ -1,4 +1,5 @@
 package com.highcode.sms.model;
+import java.sql.Blob;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 
@@ -20,7 +22,9 @@ public class School {
 	private String email;
 	private String address;
 	private String phone;
-	private Byte[] logo;
+     
+	@Lob
+	private byte[] logo;
 	
 	 @OneToMany(mappedBy = "school",  fetch = FetchType.EAGER)
 	private List<Branch> branch;
@@ -117,10 +121,10 @@ public class School {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public Byte[] getLogo() {
+	public byte[] getLogo() {
 		return logo;
 	}
-	public void setLogo(Byte[] logo) {
+	public void setLogo(byte[] logo) {
 		this.logo = logo;
 	}
 	public List<Branch> getBranches() {
