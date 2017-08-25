@@ -23,17 +23,14 @@ public class School {
 	private String address;
 	private String phone;
      
-	@Lob
-	private byte[] logo;
-	
-	 @OneToMany(mappedBy = "school",  fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "school",  fetch = FetchType.EAGER)
 	private List<Branch> branch;
 	 
 	
 	@Override
 	public String toString() {
 		return "School [schoolId=" + id + ", schoolName=" + schoolName + ", email=" + email + ", address="
-				+ address + ", phone=" + phone + ", logo=" + Arrays.toString(logo) + ", branches=" + branch + "]";
+				+ address + ", phone=" + phone +  ", branches=" + branch + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -42,7 +39,6 @@ public class School {
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((branch == null) ? 0 : branch.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + Arrays.hashCode(logo);
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((schoolName == null) ? 0 : schoolName.hashCode());
@@ -71,8 +67,6 @@ public class School {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
-			return false;
-		if (!Arrays.equals(logo, other.logo))
 			return false;
 		if (phone == null) {
 			if (other.phone != null)
@@ -121,12 +115,7 @@ public class School {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public byte[] getLogo() {
-		return logo;
-	}
-	public void setLogo(byte[] logo) {
-		this.logo = logo;
-	}
+	
 	public List<Branch> getBranches() {
 		return branch;
 	}
