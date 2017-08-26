@@ -1,5 +1,6 @@
 package com.highcode.sms.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Student {
@@ -25,6 +28,13 @@ public class Student {
 	private String address;
 	private String email;
 	private String phoneNo;
+	
+	@Temporal(value=TemporalType.DATE)
+	private Date date;
+	
+	private String oldSchool;
+	
+	
 	@OneToMany(mappedBy="student",fetch=FetchType.LAZY)
 	private List<StudentPhotoUploads> photos;
 	@ManyToOne(cascade=CascadeType.REFRESH)

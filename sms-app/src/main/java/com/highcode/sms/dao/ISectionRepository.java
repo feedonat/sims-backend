@@ -3,9 +3,9 @@ package com.highcode.sms.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.highcode.sms.model.StudentPhotoUploads;
+import com.highcode.sms.model.Section;
 
 @Repository
-public interface IStudentPhotoUploadsRepository extends JpaRepository<StudentPhotoUploads, Integer> {
+public interface ISectionRepository extends JpaRepository<Section, Integer> {
 
 }

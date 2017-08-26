@@ -22,6 +22,8 @@ public class School {
 	private String email;
 	private String address;
 	private String phone;
+	@Lob
+	private byte[] logo ;
      
     @OneToMany(mappedBy = "school",  fetch = FetchType.EAGER)
 	private List<Branch> branch;
