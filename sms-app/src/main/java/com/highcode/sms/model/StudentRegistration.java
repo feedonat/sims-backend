@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Registration {
+public class StudentRegistration {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

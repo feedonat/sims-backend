@@ -26,7 +26,7 @@ public class SchoolController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<School> addSchool(@RequestBody School school) throws GenericException {
 
-		logger.info("getSchoolById() received the request for school" + school.toString());
+		logger.info("addSchool() received the request for school" + school.toString());
 		try {
 			School saved = schoolService.save(school);
 			logger.debug("saving school " + school);
