@@ -10,13 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.highcode.sms.exception.GenericException;
-import com.highcode.sms.model.AccademicYear;
 import com.highcode.sms.model.Branch;
-import com.highcode.sms.model.School;
-import com.highcode.sms.model.Section;
 import com.highcode.sms.service.IBranchService;
-import com.highcode.sms.service.ISchoolService;
-import com.highcode.sms.service.ISectionService;
+
 
 @RestController
 
