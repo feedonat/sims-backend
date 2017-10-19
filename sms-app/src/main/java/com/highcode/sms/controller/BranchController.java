@@ -16,7 +16,7 @@ import com.highcode.sms.service.IBranchService;
 
 @RestController
 
-@RequestMapping("/api/v1/branch")
+@RequestMapping("/api/branch")
 public class BranchController {
 
 	private static final Logger logger = Logger.getLogger(BranchController.class);
